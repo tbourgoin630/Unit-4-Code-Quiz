@@ -153,4 +153,4 @@ const questions = [
             { text: 'console.log', corect: true },
         ]
     },
-]
+] 
