@@ -1,29 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>Code Quiz</title>
 </head>
+
 <body>
-    <div class="container">
-        <p id="counter"></p>
-        <div id="question-container" class="hide">
-           
-            <div id="question">Question</div>
-            <div id="answer-button" class="btn-grid">
-                <!-- <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button> -->
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <a href="#" id="highscore-nav">View High Score</a>
+                <a href="index.html" id="reset-nav">Start New Quiz</a>
+            </div>
+            <div class="col-6 d flex justify-content-end">
+                <div class="text-danger" id="timerText"></div>
             </div>
         </div>
-        <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
-            <button id="next-btn" class="next-btn btn hide">Next</button>
+    </header>
+
+    <main>
+        <div class="container-fluid mt-5" id="quizStart">
+            <h1 class="text-center">Code Quiz</h1>
+            <h4 class="text-center">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</h4>
+            <button id="startBtn" class="btn btn-primary">Start Quiz</button>
         </div>
-    </div>
+
+        <div class="container" id="startQuiz">
+            <div class="row">
+                <h3 id="question">Question</h3>
+                <button value=1 id="option1" class="btn btn-primary"></button>
+                <button value=2 id="option2" class="btn btn-primary"></button>
+                <button value=3 id="option3" class="btn btn-primary"></button>
+                <button value=4 id="option4" class="btn btn-primary"></button>
+
+                <div id="return-answer"></div>
+            </div>
+        </div>
+
+        <div class="container" id="endQuiz">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <h4>End of Quiz</h4>
+                <p id="finalScore"></p>
+                <form>
+                    <div class="form-group row px-3 mb-0">
+                        <label class="col-3 col-form-label px-0">Enter Initials:</label>
+                        <div class="col-7 pr-3 pl-0">
+                            <input type="text" maxlength="2"
+                            class="form-control" id="inputInitials">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container" id="highscores">
+            <div class="row">
+                <div class="col justify-content-center text-center">
+                    <h1>High Scores</h1>
+                    <button id="newquizBtn" class="btn btn-primary">Start Over</button>
+                    <button id="clearHiScoreBtn" class="btn btn-primary">Clear High Scores</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
